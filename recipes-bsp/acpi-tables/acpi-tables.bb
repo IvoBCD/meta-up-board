@@ -40,6 +40,6 @@ do_deploy() {
 	cd ${WORKDIR}/acpi-tables
 	find kernel | cpio -H newc -o > ${DEPLOYDIR}/acpi-tables.cpio
 
-	cat ${DEPLOYDIR}/acpi-tables.cpio ${DEPLOY_DIR_IMAGE}/microcode.cpio > ${DEPLOYDIR}/wic-initrd
+	cat ${DEPLOYDIR}/acpi-tables.cpio > ${DEPLOYDIR}/wic-initrd
 }
 addtask deploy before do_build after do_compile
